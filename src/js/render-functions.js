@@ -10,18 +10,18 @@ export default function createMarkUp(data) {
                     alt="${el.tags}"
                 />
             </a>
-            <div class="info">
-                <p class="info-item">
-                <b>Likes: ${el.likes}</b>
+            <div class="photo-card__info">
+                <p class="photo-card__info--item">
+                <b>Likes ${el.likes}</b>
                 </p>
-                <p class="info-item">
-                <b>Views: ${el.views}</b>
+                <p class="photo-card__info--item">
+                <b>Views ${el.views}</b>
                 </p>
-                <p class="info-item">
-                <b>Comments : ${el.comments}</b>
+                <p class="photo-card__info--item">
+                <b>Comments ${el.comments}</b>
                 </p>
-                <p class="info-item">
-                <b>Downloads : ${el.downloads}</b>
+                <p class="photo-card__info--item">
+                <b>Downloads ${el.downloads}</b>
                 </p>
             </div>
         </div>

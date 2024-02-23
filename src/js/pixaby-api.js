@@ -1,6 +1,5 @@
 export default class FetchImage {
     constructor() {
-        this.page = 1;
         this._searchQuery = '';
     }
 
@@ -13,6 +12,7 @@ export default class FetchImage {
             image_type: 'photo',
             orientation: 'horizontal',
             safesearch: 'true',
+            per_page: 48,
         })
 
         const url = `https://pixabay.com/api/?${params}`;
