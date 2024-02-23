@@ -7,7 +7,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-const { galleryWrapper, formEl, inputEl } = refs;
+const { galleryWrapper, formEl, inputEl, loaderEl } = refs;
 const fetchImg = new FetchImage()
 const gallerySimpleLightbox = new SimpleLightbox('.gallery a');
 
@@ -20,7 +20,6 @@ formEl.addEventListener('submit', onformEl)
 function onformEl(e) {
     e.preventDefault();
     fetchImg.query = e.currentTarget.elements.searchQuery.value.trim();
-
     inputEl.blur()
 
     if (fetchImg.query === '') {
@@ -32,6 +31,8 @@ function onformEl(e) {
         clearHTML();
         return
     }
+
+    loaderEl.classList.remove('is-hidden');
 
     fetchImg.getImage(fetchImg.fetchedData)
         .then(data => {
@@ -48,8 +49,11 @@ function onformEl(e) {
                     messageColor: "#ffffff",
                 });
                 clearHTML();
+                loaderEl.classList.add('is-hidden');
                 return;
             }
+
+            loaderEl.classList.add('is-hidden');
 
             iziToast.success({
                 position: 'topRight',
