@@ -46,7 +46,7 @@ function onformEl(e) {
                     progressBarColor: '#B51B1B',
                     color: '#EF4040',
                     messageColor: "#ffffff",
-                    iconUrl: "./img/iconErr.svg",
+                    iconUrl: "../img/iconErr.svg",
                 });
                 clearHTML();
                 return;
